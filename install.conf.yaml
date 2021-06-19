@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      relink: true
+- link:
+    ~/.nuxtrc: .nuxtrc
+    ~/.zshrc: .zshrc
+    ~/.tool-versions: asdf/.tool-versions
+    ~/.asdfrc: asdf/.asdfrc
+    ~/.condarc: .condarc
+    ~/.curlrc: .curlrc
+    ~/.gemrc: .gemrc
+    ~/.ideavimrc: vim/.ideavimrc
+    ~/.inputrc: .inputrc
+    ~/.fzf.bash: .fzf.bash
+    ~/.fzf.zsh: .fzf.zsh
+    ~/.vimrc : vim/.vimrc
+    ~/.gitconfig : git/.gitconfig
+    ~/.gitignore : git/.gitignore
+    ~/.editorconfig: .editorconfig
+    ${HOME}/Library/Application Support/Code/User/settings.json: vscode/defaultSettings.json
+    ${HOME}/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

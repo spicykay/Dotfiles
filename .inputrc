@@ -1,0 +1,5 @@
+bindkey "\e\eOD" backward-word 
+bindkey "\e\eOC" forward-word
+bindkey '^[^M' self-insert-unmeta
+"\e[A": history-search-backward
+"\e[B": history-search-forward
