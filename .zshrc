@@ -1,12 +1,18 @@
-ZSH_DISABLE_COMPFIX=true
+fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 zstyle :prompt:pure:path color blue
 zstyle :prompt:pure:git:dirty color yellow
 zstyle :prompt:pure:git:branch color magenta
 prompt pure
 
+ZSH_DISABLE_COMPFIX=true
+
+# Brew Setup
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
 # Default Setup Variables
-DEFAULT_USER="KartikAyalasomayajula"
+DEFAULT_USER="kartikayalasomayajula"
 DEV_DIR_PATH="/Users/${DEFAULT_USER}/dev"
 
 ########## OH MY ZSH SETUP ##########
@@ -16,10 +22,11 @@ export ZSH="/Users/${DEFAULT_USER}/.oh-my-zsh"
 DISABLE_MAGIC_FUNCTIONS=true
 
 plugins=(
-  wd
   fzf
+  asdf
   autojump
   zsh-autosuggestions
+  zsh-syntax-highlighting
   zsh_reload
   zsh-completions
   golang
@@ -31,7 +38,6 @@ plugins=(
   ruby
   history-substring-search
 )
-
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
@@ -68,9 +74,6 @@ alias branch="git branch -a | grep -oE '[^ ]+$' | fzf --preview='git show --colo
 alias k="kubectl"
 alias kpo="kubectl get pods"
 source <(kubectl completion zsh)
-
-# zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ########### PATH DEFINITIONS ##########
 export PATH=/usr/local/bin:$PATH
@@ -132,7 +135,8 @@ fshow() {
 }
 
 ########## ASDF ##########
-. /usr/local/opt/asdf/asdf.sh
+export ASDF_DIR=$(brew --prefix asdf)
+. "${ASDF_DIR}"/asdf.sh
 export PATH="$PATH:$(asdf where nodejs)/.npm/bin"
 . ~/.asdf/plugins/java/set-java-home.zsh
 
