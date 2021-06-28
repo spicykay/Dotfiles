@@ -11,3 +11,6 @@ git: brew
 
 asdf: brew
 	brew install asdf
+
+backup:
+	./bin/backup.sh
