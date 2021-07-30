@@ -55,7 +55,7 @@ export ARCHFLAGS="-arch x86_64"
 alias mi='mvn install'
 alias mci='mvn clean install'
 alias mcit='mvn clean install -DskipTests=true'
-alias mcif='mvn clean install -T2C -DskipTests=true -Dmaven.test.skip=true -Dcheckstyle.skip=true -Dmdep.analyze.skip=true'
+alias mcif='mvn clean install -T2C -DskipTests=true -Dmaven.test.skip=true -Dcheckstyle.skip=true -Dmdep.analyze.skip=true -DskipRedis=true'
 
 ########### GIT ##########
 # Custom Git Aliases

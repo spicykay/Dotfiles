@@ -18,7 +18,7 @@
 	whitespace = red reverse
 [user]
 	name = Kartik Ayalasomayajula
-	email = kartik2012@gmail.com 
+	email = kartik2012@gmail.com
 [pager]
     diff = delta
     log = delta
@@ -41,3 +41,5 @@
 
 [status]
 	submoduleSummary = true
+[alias]
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
