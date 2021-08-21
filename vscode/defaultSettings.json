@@ -44,12 +44,13 @@
     "materialTheme.accent": "Lime",
     "quarkus.tools.alwaysShowWelcomePage": false,
     "editor.fontSize": 18,
-    "workbench.colorTheme": "Ayu Mirage Bordered",
+    "workbench.colorTheme": "Community Material Theme High Contrast",
     "workbench.startupEditor": "newUntitledFile",
     "python.languageServer": "Microsoft",
     "diffEditor.ignoreTrimWhitespace": false,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter.notebook.ipynb",
+        "*.plist": "default"
     },
     "redhat.telemetry.enabled": false,
     "microprofile.alwaysShowOverview": false,
