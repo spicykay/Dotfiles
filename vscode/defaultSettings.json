@@ -44,7 +44,6 @@
     "materialTheme.accent": "Lime",
     "quarkus.tools.alwaysShowWelcomePage": false,
     "editor.fontSize": 16,
-    "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
     "workbench.startupEditor": "newUntitledFile",
     "python.languageServer": "Microsoft",
     "diffEditor.ignoreTrimWhitespace": false,
@@ -54,7 +53,7 @@
     "redhat.telemetry.enabled": false,
     "microprofile.alwaysShowOverview": false,
     "jupyter.alwaysTrustNotebooks": true,
-    "python.defaultInterpreterPath": "/Users/KartikAyalasomayajula/.asdf/shims/pip",
     "git.confirmSync": false,
-    "go.toolsManagement.autoUpdate": true
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷"
 }

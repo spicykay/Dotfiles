@@ -1,6 +1,6 @@
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
-zstyle :prompt:pure:path color blue
+zstyle :prompt:pure:path color green
 zstyle :prompt:pure:git:dirty color yellow
 zstyle :prompt:pure:git:branch color magenta
 prompt pure
@@ -104,9 +104,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export ASDF_PYTHON_PATCH_URL="https://github.com/python/cpython/commit/8ea6353.patch?full_index=1"
 # Python System Environment Variables
 export SDKROOT="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
-export CFLAGS="-I/usr/local/opt/sqlite/include -I/usr/local/opt/openssl/include -I/usr/local/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
-export LDFLAGS="-L/usr/local/opt/sqlite/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib"
+export CFLAGS="-I$(brew --prefix sqlite)/include -I$(brew --prefix openssl)/include -I$(brew --prefix readline)/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
+export CPPFLAGS="-I$(brew --prefix zlib)/include"
+export LDFLAGS="-L$(brew --prefix sqlite)/lib -L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib"
 
 ########## Man Pages ##########
 alias man='/usr/bin/man 2>/dev/null'
@@ -143,6 +143,14 @@ export PATH="$PATH:$(asdf where nodejs)/.npm/bin"
 # DIRENV Integration: https://github.com/asdf-community/asdf-direnv
 eval "$(direnv hook zsh)"
 
-########## BROOT ##########
-# https://github.com/Canop/broot
-source "/Users/${DEFAULT_USER}/.config/broot/launcher/bash/br"
+# PYENV
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
+# zsh Bindkeys
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
