@@ -17,6 +17,7 @@
     ~/.gitconfig : git/.gitconfig
     ~/.gitignore : git/.gitignore
     ~/.editorconfig: .editorconfig
+    /usr/local/bin/brewx86: bin/brewx86
     ${HOME}/Library/Application Support/Code/User/settings.json: vscode/defaultSettings.json
     ${HOME}/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
 - shell:

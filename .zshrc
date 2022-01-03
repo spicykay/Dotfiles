@@ -30,6 +30,7 @@ plugins=(
   rbenv
   ruby
   history-substring-search
+  zsh-syntax-highlighting
 )
 
 autoload -U compinit && compinit
@@ -51,6 +52,11 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+########## GOLANG ##########
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+
+
 ########## MAVEN ##########
 alias mi='mvn install'
 alias mci='mvn clean install'
@@ -63,18 +69,17 @@ alias gcm="git checkout master || git checkout main"
 alias grs="git pull --rebase source master"
 alias grm="git pull --rebase origin master"
 alias branch="git branch -a | grep -oE '[^ ]+$' | fzf --preview='git show --color=always --stat {}'"
+alias guf='git pull --rebase source master && git push origin master'
 
 ########### KUBERNETES ##########
 alias k="kubectl"
 alias kpo="kubectl get pods"
 source <(kubectl completion zsh)
 
-# zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 ########### PATH DEFINITIONS ##########
 export PATH=/usr/local/bin:$PATH
 export PATH=~/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/libressl/bin:$PATH"
@@ -82,8 +87,8 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:~/go/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 export PATH=/usr/local/anaconda3/bin:"$PATH"
 
 ########## GRAPHWIZ ##########
@@ -132,7 +137,7 @@ fshow() {
 }
 
 ########## ASDF ##########
-. /usr/local/opt/asdf/asdf.sh
+. $(brew --prefix asdf)/libexec/asdf.sh
 export PATH="$PATH:$(asdf where nodejs)/.npm/bin"
 . ~/.asdf/plugins/java/set-java-home.zsh
 

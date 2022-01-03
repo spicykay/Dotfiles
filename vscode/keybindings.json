@@ -124,5 +124,27 @@
     {
         "key": "ctrl+shift+up",
         "command": "workbench.action.splitEditorUp"
+    },
+    {
+        "key": "alt+b",
+        "command": "bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+k",
+        "command": "-bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+b",
+        "command": "bookmarks.listFromAllFiles"
+    },
+    {
+        "key": "cmd+g cmd+k",
+        "command": "git.commit"
+    },
+    {
+        "key": "cmd+g cmd+a",
+        "command": "git.stageAll"
     }
 ]

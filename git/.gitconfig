@@ -19,6 +19,7 @@
 [user]
 	name = Kartik Ayalasomayajula
 	email = kartik2012@gmail.com
+	signingkey = 424D775114DC2740
 [pager]
     diff = delta
     log = delta
@@ -43,3 +44,7 @@
 	submoduleSummary = true
 [alias]
     cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[commit]
+	gpgsign = true
