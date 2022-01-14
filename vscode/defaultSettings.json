@@ -64,5 +64,11 @@
     "workbench.editor.pinnedTabSizing": "compact",
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "java.imports.gradle.wrapper.checksums": [
+        {
+            "sha256": "f2508561d986ebdfb7c410e1bfe59bdd3f77f380feea58d8ac3165fb9e44d843",
+            "allowed": true
+        }
+    ]
 }

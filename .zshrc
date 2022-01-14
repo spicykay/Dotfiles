@@ -1,3 +1,4 @@
+fpath+=("/opt/homebrew/share/zsh/site-functions")
 ZSH_DISABLE_COMPFIX=true
 autoload -U promptinit; promptinit
 zstyle :prompt:pure:path color blue
@@ -54,8 +55,6 @@ export ARCHFLAGS="-arch x86_64"
 
 ########## GOLANG ##########
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
-
 
 ########## MAVEN ##########
 alias mi='mvn install'
