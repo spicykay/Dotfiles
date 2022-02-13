@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 fpath+=("/opt/homebrew/share/zsh/site-functions")
 ZSH_DISABLE_COMPFIX=true
 autoload -U promptinit; promptinit
@@ -49,7 +54,7 @@ export EDITOR='vim'
 #   export EDITOR='mvim'
 # fi
 # Compilation flags
-export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch $(uname -m)"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -101,13 +106,12 @@ export FZF_BASE=$(which fzf)
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 ########## PYTHON ##########
-# ASDF python patch required for mac 10.11: https://github.com/danhper/asdf-python
-export ASDF_PYTHON_PATCH_URL="https://github.com/python/cpython/commit/8ea6353.patch?full_index=1"
 # Python System Environment Variables
 export SDKROOT="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
-export CFLAGS="-I/usr/local/opt/sqlite/include -I/usr/local/opt/openssl/include -I/usr/local/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
-export LDFLAGS="-L/usr/local/opt/sqlite/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib"
+export CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
+export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
+export CPPFLAGS="-I$(brew --prefix zlib)/include"
+eval "$(pyenv init -)"
 
 ########## Man Pages ##########
 alias man='/usr/bin/man 2>/dev/null'
@@ -146,3 +150,8 @@ eval "$(direnv hook zsh)"
 ########## BROOT ##########
 # https://github.com/Canop/broot
 source "/Users/${DEFAULT_USER}/.config/broot/launcher/bash/br"
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
