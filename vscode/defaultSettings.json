@@ -40,8 +40,7 @@
   "materialTheme.accent" : "Lime",
   "go.formatTool" : "gofmt",
   "diffEditor.ignoreTrimWhitespace": false,
-  "jupyter.alwaysTrustNotebooks" : true,
-  "workbench.iconTheme" : "material-icon-theme",
+  "jupyter.alwaysTrustNotebooks": true,
   "java.imports.gradle.wrapper.checksums" : [
     {
       "sha256" : "f2508561d986ebdfb7c410e1bfe59bdd3f77f380feea58d8ac3165fb9e44d843",
@@ -74,5 +73,9 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "editor.multiCursorModifier": "ctrlCmd"
+  "editor.multiCursorModifier": "ctrlCmd",
+  "vs-kubernetes": {
+    "vscode-kubernetes.minikube-path.mac": "/Users/KartikAyalasomayajula/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
+  },
+  "workbench.colorTheme": "Monokai Night"
 }
