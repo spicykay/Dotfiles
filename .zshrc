@@ -2,8 +2,6 @@
 export PATH="${PATH}:${HOME}/.local/bin"
 eval "$(fig init zsh pre)"
 
-
-
 fpath+=("/opt/homebrew/share/zsh/site-functions")
 ZSH_DISABLE_COMPFIX=true
 autoload -U promptinit; promptinit
@@ -114,6 +112,12 @@ export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -
 export CPPFLAGS="-I$(brew --prefix zlib)/include"
 eval "$(pyenv init -)"
 
+########## RUBY ##########
+# Ruby m1 mac compatibility flags
+# https://github.com/asdf-vm/asdf-ruby/issues/198
+export RUBY_CONFIGURE_OPTS="--with-zlib-dir=/opt/homebrew/opt/zlib --with-openssl-dir=/opt/homebrew/opt/openssl@1.1 --with-readline-dir=/opt/homebrew/opt/readline --with-libyaml-dir=/opt/homebrew/opt/libyaml"
+export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+
 ########## Man Pages ##########
 alias man='/usr/bin/man 2>/dev/null'
 
@@ -152,7 +156,6 @@ eval "$(direnv hook zsh)"
 # https://github.com/Canop/broot
 source "/Users/${DEFAULT_USER}/.config/broot/launcher/bash/br"
 
-
-
 # Fig post block. Keep at the bottom of this file.
 eval "$(fig init zsh post)"
+
