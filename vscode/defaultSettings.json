@@ -2,8 +2,7 @@
   "[json]" : {
     "editor.defaultFormatter" : "esbenp.prettier-vscode"
   },
-  "python.languageServer" : "Default",
-  "workbench.editor.enablePreview" : false,
+  "python.languageServer": "Default",
   "workbench.colorCustomizations" : {
     "settings.headerForeground" : "#7CB342",
     "menu.selectionForeground" : "#7CB342",
@@ -77,5 +76,13 @@
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.mac": "/Users/KartikAyalasomayajula/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
   },
-  "workbench.colorTheme": "Monokai Night"
+  "workbench.colorTheme": "Monokai Night",
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

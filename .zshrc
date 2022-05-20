@@ -1,14 +1,12 @@
-# Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init zsh pre)"
+# fpath+=("/opt/homebrew/share/zsh/site-functions")
+# ZSH_DISABLE_COMPFIX=true
+# autoload -U promptinit; promptinit
+# zstyle :prompt:pure:path color blue
+# zstyle :prompt:pure:git:dirty color yellow
+# zstyle :prompt:pure:git:branch color magenta
+# prompt pure
 
-fpath+=("/opt/homebrew/share/zsh/site-functions")
-ZSH_DISABLE_COMPFIX=true
-autoload -U promptinit; promptinit
-zstyle :prompt:pure:path color blue
-zstyle :prompt:pure:git:dirty color yellow
-zstyle :prompt:pure:git:branch color magenta
-prompt pure
+eval "$(starship init zsh)"
 
 # Default Setup Variables
 DEFAULT_USER="KartikAyalasomayajula"
@@ -102,7 +100,9 @@ export FZF_BASE=$(which fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ########## ITERM ##########
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
 ########## PYTHON ##########
 # Python System Environment Variables
@@ -111,6 +111,9 @@ export CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/inclu
 export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
 export CPPFLAGS="-I$(brew --prefix zlib)/include"
 eval "$(pyenv init -)"
+
+########## DOCKER ##########
+export DOCKER_DEFAULT_PLATFORM="linux/amd64"
 
 ########## RUBY ##########
 # Ruby m1 mac compatibility flags
@@ -149,13 +152,15 @@ fshow() {
 export PATH="$PATH:$(asdf where nodejs)/.npm/bin"
 . ~/.asdf/plugins/java/set-java-home.zsh
 
+########## Terraform ##########
+export TFENV_ARCH=amd64
+
+########## Application Aliases ##########
+alias lx='exa'
+
 # DIRENV Integration: https://github.com/asdf-community/asdf-direnv
 eval "$(direnv hook zsh)"
 
 ########## BROOT ##########
 # https://github.com/Canop/broot
 source "/Users/${DEFAULT_USER}/.config/broot/launcher/bash/br"
-
-# Fig post block. Keep at the bottom of this file.
-eval "$(fig init zsh post)"
-
