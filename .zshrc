@@ -61,16 +61,10 @@ export GOPATH=$HOME/go
 ########## MAVEN ##########
 alias mi='mvn install'
 alias mci='mvn clean install'
-alias mcit='mvn clean install -DskipTests=true'
-alias mcif='mvn clean install -T2C -DskipTests=true -Dmaven.test.skip=true -Dcheckstyle.skip=true -Dmdep.analyze.skip=true -DskipRedis=true'
 
 ########### GIT ##########
 # Custom Git Aliases
 alias gcm="git checkout master || git checkout main"
-alias grs="git pull --rebase source master"
-alias grm="git pull --rebase origin master"
-alias branch="git branch -a | grep -oE '[^ ]+$' | fzf --preview='git show --color=always --stat {}'"
-alias guf='git pull --rebase source master && git push origin master'
 
 ########### KUBERNETES ##########
 alias k="kubectl"
@@ -91,9 +85,6 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=/usr/local/anaconda3/bin:"$PATH"
-
-########## GRAPHWIZ ##########
-export GRAPHVIZ_DOT=/usr/local/Cellar/graphviz/2.40.1_1/bin/dot
 
 ########## Fuzzy Finder ##########
 export FZF_BASE=$(which fzf)

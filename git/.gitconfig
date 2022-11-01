@@ -35,8 +35,6 @@
 
 [interactive]
 	diffFilter = delta --color-only
-[includeIf "gitdir:~/work/"]
-  	path = ~/work/.gitconfig
 [includeIf "gitdir:~/dev/"]
   	path = ~/dev/.gitconfig
 
