@@ -114,6 +114,8 @@ eval "$(pyenv init -)"
 
 ########## DOCKER ##########
 export DOCKER_DEFAULT_PLATFORM="linux/amd64"
+export DOCKER_BUILDKIT=0
+export COMPOSE_DOCKER_CLI_BUILD=0
 
 ########## RUBY ##########
 # Ruby m1 mac compatibility flags

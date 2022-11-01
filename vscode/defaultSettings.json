@@ -74,9 +74,10 @@
   },
   "editor.multiCursorModifier": "ctrlCmd",
   "vs-kubernetes": {
-    "vscode-kubernetes.minikube-path.mac": "/Users/KartikAyalasomayajula/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
+    "vscode-kubernetes.minikube-path.mac": "${HOME}/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+    "vs-kubernetes.crd-code-completion": "disabled"
   },
-  "workbench.colorTheme": "Monokai Night",
+  "workbench.colorTheme": "Monokai",
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "[javascript]": {
@@ -84,5 +85,10 @@
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "npm.keybindingsChangedWarningShown": true,
+  "editor.stickyScroll.enabled": true
 }

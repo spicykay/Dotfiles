@@ -48,3 +48,5 @@
 	program = /opt/homebrew/bin/gpg
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = main
